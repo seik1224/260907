@@ -41,3 +41,28 @@ function handleMouseMove(e){
 
 window.addEventListener('mousemove', handleMouseMove);
 window.removeEventListener('mousemove', handleMouseMove);
+
+function onKeyDown(e){
+	console.log(e);
+
+	const currentLeft = parseInt(getComputedStyle(face).left)
+	const currentTop = parseInt(getComputedStyle(face).top)
+
+	if(e.keyCode == 37){
+		face.style.left = currentLeft - window.innerWidth * 0.05 +'px';
+	}
+	if(e.keyCode == 39){
+		face.style.left = currentLeft + window.innerWidth * 0.05 +'px';
+	}
+	if(e.keyCode == 38){
+		face.style.top = currentTop - window.innerHeight * 0.05 +'px';
+	}
+	if(e.keyCode == 40) {
+		e.preventDefault();
+		face.style.top = currentTop + window.innerHeight * 0.05 +'px';
+	}
+
+}
+
+window.addEventListener('keydown', onKeyDown)
+window.removeEventListener('keydown', onKeyDown)
