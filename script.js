@@ -66,3 +66,18 @@ function onKeyDown(e){
 
 window.addEventListener('keydown', onKeyDown)
 window.removeEventListener('keydown', onKeyDown)
+
+function onScroll(){
+	console.log(scrollY)
+
+	face.style.transition = 'top 0.3s';
+	face.style.top = scrollY + window.innerHeight/2 + 'px';
+
+	if(scrollY >= 500){
+		document.querySelector('.balgre').style.opacity = 1;
+	} else {
+		document.querySelector('.balgre').style.opacity = 0;
+	}
+}
+
+window.addEventListener('scroll', onScroll)
