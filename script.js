@@ -18,3 +18,26 @@
 	8. resize을 이용하여 브라우저의 width값이 700미만 또는 height값이 700미만이면 볼터치가 생기게 해보세요
 	
 */
+
+const facehover = document.querySelector('.facehover');
+const face = document.querySelector('.face');
+
+// facehover.addEventListener('mouseenter', function(){
+// 	this.previousElementSibling.style.transition = 'opacity 0.3s';
+// 	this.previousElementSibling.style.opacity = 1;
+// });
+
+// facehover.addEventListener('mouseleave', function(){
+// 	this.previousElementSibling.style.transition = 'opacity 0.3s';
+// 	this.previousElementSibling.style.opacity = 0;
+// });
+
+function handleMouseMove(e){
+	console.log(e);
+
+	face.style.left = e.pageX + 'px'
+	face.style.top = e.pageY + 'px'
+}
+
+window.addEventListener('mousemove', handleMouseMove);
+window.removeEventListener('mousemove', handleMouseMove);
