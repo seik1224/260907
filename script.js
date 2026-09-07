@@ -80,4 +80,17 @@ function onScroll(){
 	}
 }
 
-window.addEventListener('scroll', onScroll)
+window.addEventListener('scroll', onScroll);
+
+function onResize(){
+	const img = document.querySelector('.face img');
+
+	
+	if(innerWidth < 700 || innerHeight < 700){
+		img.style.opacity = 1;
+	} else {
+		img.style.opacity = 0;
+	}
+}
+
+window.addEventListener('resize', onResize)
